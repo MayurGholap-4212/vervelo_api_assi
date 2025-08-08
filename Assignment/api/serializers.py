@@ -4,7 +4,17 @@ from .models import *
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model=User
-        fields=['id', 'first_name', 'last_name', 'email', 'is_staff', 'is_super_admin']
+        fields=['id', 'first_name', 'last_name','username','password', 'email', 'is_staff', 'is_super_admin']
+    
+    def create(self, validated_data):
+        user = super().create(validated_data)
+        password = validated_data.pop('password', None)
+        if password:
+            user.set_password(password)  
+        user.is_staff = False
+        user.is_super_admin = False
+        user.save()
+        return user
     
 class QuestionSerializers(serializers.ModelSerializer):
     class Meta:
