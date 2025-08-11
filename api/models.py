@@ -21,7 +21,7 @@ class Question(models.Model):
     created_by=models.ForeignKey(User,on_delete=models.SET_NULL,null=True,related_name='created_questions')
     updated_by=models.ForeignKey(User,on_delete=models.SET_NULL,null=True,related_name='updated_questions')
     created_at=models.DateTimeField(auto_now_add=True)
-    updated_at=models.DateTimeField(auto_now_add=True)
+    updated_at=models.DateTimeField(auto_now=True)
         
 class Assessment(models.Model):
     title=models.CharField(max_length=255)
@@ -31,7 +31,7 @@ class Assessment(models.Model):
     created_by=models.ForeignKey(User,on_delete=models.SET_NULL,null=True,related_name='created_assingments')
     created_at=models.DateTimeField(auto_now_add=True)
     updated_by=models.ForeignKey(User,on_delete=models.SET_NULL,null=True,related_name='updated_assignments')
-    updated_at=models.DateTimeField(auto_now_add=True)
+    updated_at=models.DateTimeField(auto_now=True)
 
 class AssignAssessment(models.Model):
     user=models.ForeignKey(User,on_delete=models.SET_NULL,null=True,related_name='assigned_assessments')
