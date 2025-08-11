@@ -4,9 +4,9 @@ from rest_framework.routers import DefaultRouter
 
 router=DefaultRouter()
 router.register('question',QuestionViewset)
-router.register('Assessment',AssessmentViewset)
-router.register('Assignments',AssignAssessmentViewset)
-router.register('UserRegister',UserRegisterViewset)
+router.register('assessment',AssessmentViewset)
+router.register('assignments',AssignAssessmentViewset)
+router.register('userRegister',UserRegisterViewset)
 
 urlpatterns = [
     path('',include(router.urls)),
