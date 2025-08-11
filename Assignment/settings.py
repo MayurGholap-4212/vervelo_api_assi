@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # settings.py
-AUTH_USER_MODEL = 'api.User'
+AUTH_USER_MODEL = 'account.User'
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'api',
+    'account',
     'rest_framework',
 ]
 
