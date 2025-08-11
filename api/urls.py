@@ -6,7 +6,7 @@ router=DefaultRouter()
 router.register('question',QuestionViewset)
 router.register('assessment',AssessmentViewset)
 router.register('assignments',AssignAssessmentViewset)
-router.register('userRegister',UserRegisterViewset)
+router.register('userregister',UserRegisterViewset)
 
 urlpatterns = [
     path('',include(router.urls)),
